@@ -145,6 +145,16 @@ footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between
 .ck li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:7px;border-left:3px solid var(--red);border-bottom:3px solid var(--red);transform:rotate(-45deg)}
 .inf .cta{margin-top:0}.fin{font-size:14px;color:var(--mu);margin:14px 0 0}
 .lst+.lst{margin-top:56px;padding-top:56px;border-top:1px solid var(--ln)}
+.ap-side .btn{margin-top:10px}
+@media(min-width:860px){.ap-side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 88px);align-self:start}}
+#af{gap:0}
+#af fieldset{border:0;border-top:1px solid var(--ln);margin:0;padding:22px 0;min-width:0}
+#af fieldset:first-of-type{border-top:0;padding-top:0}
+#af legend{float:left;width:100%;padding:0;margin:0 0 14px;font:italic 800 28px/1.05 var(--fd)}
+#af legend+*{clear:both}
+#af .grp{display:grid;gap:14px}
+#af .btn{justify-self:start;margin-top:4px}
+.note{font-size:13px;color:var(--mu);margin:0}
 </style>
 </head>
 <body id="top">
@@ -152,7 +162,7 @@ footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between
 
 <header><div class="w">
 <a class="logo" href="#top"><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M5 23A15 15 0 0 1 35 23" fill="none" style="stroke:var(--red)" stroke-width="6" stroke-dasharray="5.4 2"/><path d="M20 23L27 11" style="stroke:var(--tx)" stroke-width="2.6" stroke-linecap="round"/></svg>WINDGAT</a>
-<nav><a href="#featured">Featured</a><a href="#vehicles">Vehicles</a><a href="#delivery">Delivery</a><a href="#how">How it works</a><a href="#enquire">Enquire</a></nav>
+<nav><a href="#featured">Featured</a><a href="#vehicles">Vehicles</a><a href="#delivery">Delivery</a><a href="#how">How it works</a><a href="#enquire">Enquire</a><a href="#apply">Apply</a></nav>
 <button class="tg" id="tg" aria-label="Switch between light and dark theme">☀️</button>
 <a class="btn wa sm" href="https://wa.me/27638178903" data-msg="Hi Windgat, I’d like to enquire about a vehicle."><svg><use href="#i"/></svg>Chat</a>
 </div></header>
@@ -298,7 +308,8 @@ footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between
 <div><h2>Enquire on WhatsApp</h2>
 <p>Fill in the details and we’ll open WhatsApp with your message ready to send.</p>
 <a class="ph" href="tel:+27638178903">063 817 8903</a>
-<p>Windgat Wadi Transi<br>Welkom, Free State, South Africa</p></div>
+<p>Windgat Wadi Transi<br>Welkom, Free State, South Africa</p>
+<a class="btn gh sm" href="#apply">Ready to apply? Send your details</a></div>
 <form id="f">
 <div class="two"><label>Your name<input name="n" autocomplete="name" placeholder="Name"></label>
 <label>Delivery town or city<input name="c" placeholder="e.g. Durban"></label></div>
@@ -306,6 +317,52 @@ footer .w{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between
 <label>Budget<input name="b" placeholder="e.g. R150 000"></label></div>
 <label>Anything else?<textarea name="m" rows="3" placeholder="Make, model, year, mileage…"></textarea></label>
 <button class="btn wa" type="submit"><svg><use href="#i"/></svg>Send on WhatsApp</button>
+</form>
+</div></section>
+
+<section class="alt" id="apply"><div class="w enq">
+<div class="ap-side"><h2>Apply on WhatsApp</h2>
+<p>Fill in your details and we’ll open WhatsApp with them ready to send. Leave out anything you’d rather tell us in the chat.</p>
+<p class="note">Your details go straight to Windgat in WhatsApp. Nothing is saved on this site.</p></div>
+<form id="af" autocomplete="on">
+<fieldset><legend>Personal info</legend><div class="grp">
+<div class="two"><label>Title<select name="ti" autocomplete="honorific-prefix"><option value="">Select</option><option>Mr</option><option>Mrs</option><option>Ms</option><option>Miss</option><option>Dr</option><option>Prof</option></select></label>
+<label>Initials<input name="in" autocapitalize="characters" placeholder="e.g. J.P."></label></div>
+<div class="two"><label>Full names<input name="fn" autocomplete="given-name" placeholder="As on your ID"></label>
+<label>Surname<input name="sn" autocomplete="family-name" required></label></div>
+<div class="two"><label>Cell number<input name="cn" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 082 123 4567" required></label>
+<label>ID number<input name="id" inputmode="numeric" maxlength="13" pattern="[0-9]{13}" title="13 digits, no spaces" autocomplete="off" required></label></div>
+<label>Home address<textarea name="ha" rows="2" autocomplete="street-address" placeholder="Street, suburb, town, postal code"></textarea></label>
+<div class="two"><label>Gross salary<input name="gs" inputmode="decimal" placeholder="R per month"></label>
+<label>Net salary<input name="ns" inputmode="decimal" placeholder="R per month"></label></div>
+</div></fieldset>
+
+<fieldset><legend>Employment details</legend><div class="grp">
+<div class="two"><label>Occupation<input name="oc" autocomplete="organization-title"></label>
+<label>Employer name<input name="en" autocomplete="organization"></label></div>
+<div class="two"><label>Period of time with company<input name="pt" placeholder="e.g. 3 years 2 months"></label>
+<label>Employer cell number<input name="ec" type="tel" inputmode="tel" autocomplete="off"></label></div>
+<label>Employer address<textarea name="ea" rows="2" autocomplete="off"></textarea></label>
+</div></fieldset>
+
+<fieldset><legend>Marital status</legend><div class="grp">
+<label>Marital status<select name="ms"><option value="">Select</option><option>Single</option><option>Married in community of property</option><option>Married out of community of property</option><option>Divorced</option><option>Widowed</option></select></label>
+</div></fieldset>
+
+<fieldset><legend>Banking details</legend><div class="grp">
+<label>Name of bank<input name="bk" list="banks" autocomplete="off" placeholder="Choose or type your bank"></label>
+<datalist id="banks"><option value="Absa"><option value="African Bank"><option value="Capitec"><option value="Discovery Bank"><option value="FNB"><option value="Investec"><option value="Nedbank"><option value="Standard Bank"><option value="TymeBank"></datalist>
+</div></fieldset>
+
+<fieldset><legend>Monthly expenses</legend><div class="grp">
+<div class="two"><label>Rent<input name="re" inputmode="decimal" placeholder="R0"></label>
+<label>Clothing accounts<input name="ca" inputmode="decimal" placeholder="R0"></label></div>
+<div class="two"><label>Loan<input name="lo" inputmode="decimal" placeholder="R0"></label>
+<label>Cellphone contracts<input name="cc" inputmode="decimal" placeholder="R0"></label></div>
+<label>Other<input name="ot" placeholder="Anything else you pay monthly, with amounts"></label>
+</div></fieldset>
+
+<button class="btn wa" type="submit"><svg><use href="#i"/></svg>Send application on WhatsApp</button>
 </form>
 </div></section>
 </main>
@@ -326,6 +383,15 @@ const C=[['Cape Town',62,212,20],['Upington',72,118,-10],['Gqeberha',250,220,20]
 document.getElementById('map').innerHTML=C.map(([n,x,y,d],i)=>`<path class="route" d="M205 125L${x} ${y}"/><circle class="pt" cx="${x}" cy="${y}" r="5"/><text x="${x}" y="${y+d}" text-anchor="middle">${n}</text><circle class="dot" r="3.5"><animateMotion dur="${3+i*.4}s" begin="${i*.5}s" repeatCount="indefinite" path="M205 125L${x} ${y}"/></circle>`).join('')+'<circle class="pt" cx="205" cy="125" r="7"/><circle class="ping" cx="205" cy="125" r="7"/><text class="hq" x="205" y="150" text-anchor="middle">WELKOM</text>';
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),g=k=>(f.get(k)||'').trim();
 const m=['Hi Windgat, I’d like to enquire about a vehicle.',g('n')&&'Name: '+g('n'),'Looking for: '+g('t'),g('b')&&'Budget: '+g('b'),g('c')&&'Deliver to: '+g('c'),g('m')&&'Notes: '+g('m')].filter(Boolean).join('\n');
+window.open(wa(m),'_blank')};
+
+document.getElementById('af').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),g=k=>(f.get(k)||'').trim()||'-';
+const S=[['Personal info',[['Title','ti'],['Initials','in'],['Full names','fn'],['Surname','sn'],['Cell number','cn'],['Home address','ha'],['ID number','id'],['Gross salary','gs'],['Net salary','ns']]],
+['Employment details',[['Occupation','oc'],['Employer name','en'],['Period of time with company','pt'],['Employer address','ea'],['Employer cell number','ec']]],
+['Marital status',[['Marital status','ms']]],
+['Banking details',[['Name of bank','bk']]],
+['Monthly expenses',[['Rent','re'],['Clothing accounts','ca'],['Loan','lo'],['Cellphone contracts','cc'],['Other','ot']]]];
+const m=['Hi Windgat, here are my details for a vehicle application.'].concat(S.map(([h,F])=>'\n*'+h+'*\n'+F.map(([l,k])=>l+': '+g(k)).join('\n'))).join('\n');
 window.open(wa(m),'_blank')};
 
 document.querySelectorAll('.gal').forEach(g=>{const sl=g.querySelector('.sl'),th=g.querySelector('.th'),cn=g.querySelector('.cn'),sI=[...sl.children];let cur=-1;
